@@ -1,0 +1,15 @@
+<h1>Angular Trim Directive</h1>
+<h4>Wayne Riesterer (2018)</h4>
+<hr>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+	<label>Message</label>
+	<input type="text" formControlName="message" appTrim>
+	<button [disabled]="form.invalid">Submit</button>
+</form>
+
+<div *ngIf="isSubmitted">
+	<hr>
+	<h2>Result</h2>
+	<p>Message: {{ result }}</p>
+</div>
